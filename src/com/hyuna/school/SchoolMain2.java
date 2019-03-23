@@ -2,6 +2,7 @@ package com.hyuna.school;
 
 import java.util.Scanner;
 
+
 public class SchoolMain2 {
 
 	public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class SchoolMain2 {
 
 		Student[] stu = new Student[num];
 		
-		Student st = null;
+		com.hyuna.school.Student st = null;
 		
 
 		for (int i = 0; i < num; i++) {

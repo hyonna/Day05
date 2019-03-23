@@ -2,6 +2,7 @@ package com.hyuna.school;
 
 import java.util.Scanner;
 
+
 public class SchoolMain4 {
 
 	public static void main(String[] args) {
@@ -9,13 +10,13 @@ public class SchoolMain4 {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("학생 수를 입력하세요");
-		int num = sc.nextInt();
+		int stNum = sc.nextInt();
 
-		Student[] stu = new Student[num];
+		Student[] stu = new Student[stNum];
 
 		Student st = null;
 
-		for (int i = 0; i < num; i++) {
+		for (int i = 0; i < stNum; i++) {
 
 			st = new Student();
 
@@ -47,19 +48,19 @@ public class SchoolMain4 {
 		System.out.println();
 		
 
-		System.out.println("**학 생 정 보**");
+		System.out.println("**�학 생 정 보�**");
 		System.out.println();
 		
-		for (int i = 0; i < num; i++) {
+		for (int i = 0; i < stNum; i++) {
 
 			System.out.println("=================================");
 			System.out.println("학생 번호 : " + stu[i].num);
 			System.out.println("학생 이름 : " + stu[i].name);
 			System.out.println(stu[i].name + " 학생의 국어 점수 : " + stu[i].kor + "점");
-			System.out.println(stu[i].name + " 학생의 수학 이름 : " + stu[i].math + "점");
-			System.out.println(stu[i].name + " 학생의 영어 이름 : " + stu[i].eng + "점");
+			System.out.println(stu[i].name + " 학생의 수학 점수 : " + stu[i].math + "점");
+			System.out.println(stu[i].name + " 학생의 영어 점수 : " + stu[i].eng + "점");
 			System.out.println(stu[i].name + " 학생의 총점 : " + stu[i].total + "점");
-			System.out.printf("%s 학생의  평균 : %.2f 점\n",stu[i].name, stu[i].avg);
+			System.out.printf("%s 학생의  평균 : %.2f 점\\n",stu[i].name, stu[i].avg);
 			System.out.println("=================================");
 			System.out.println();
 

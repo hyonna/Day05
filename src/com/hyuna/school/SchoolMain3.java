@@ -1,5 +1,6 @@
 package com.hyuna.school;
 
+
 public class SchoolMain3 {
 
 	public static void main(String[] args) {
