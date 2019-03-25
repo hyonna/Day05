@@ -36,7 +36,6 @@ public class SchoolMain5 {
 				System.out.println("선생님의 학생 수 입력");
 				int sNum = sc.nextInt();
 				teacher.students = new Student[sNum];
-				
 
 				for (int i = 0; i < teacher.students.length; i++) {
 
@@ -60,8 +59,7 @@ public class SchoolMain5 {
 
 					stu.total = stu.kor + stu.eng + stu.math;
 					stu.avg = stu.total / 3.0;
-					
-					
+
 					teacher.students[i] = stu;
 
 				}
@@ -70,8 +68,6 @@ public class SchoolMain5 {
 
 				for (int i = 0; i < teacher.students.length; i++) {
 
-					
-					
 					System.out.println("=================================");
 					System.out.println("선생 이름 : " + teacher.name);
 					System.out.println("선생 과목 : " + teacher.subject);
@@ -89,17 +85,14 @@ public class SchoolMain5 {
 
 			} else if (select == 2) {
 
-				
-				
-				if(teacher.students != null) {
-					
-					System.out.println("========= 전체정보조회 =========");
-					
-				for (int i = 0; i < teacher.students.length; i++) {
+				if (teacher.students != null) {
 
-					sv.listView(teacher.students[i]);
-					
-					
+					System.out.println("========= 전체정보조회 =========");
+
+					for (int i = 0; i < teacher.students.length; i++) {
+
+						sv.listView(teacher.students[i]);
+
 //					System.out.println("=================================");
 //					System.out.println("학생 번호 : " + teacher.students[i].num);
 //					System.out.println("학생 이름 : " + teacher.students[i].name);
@@ -111,54 +104,37 @@ public class SchoolMain5 {
 //					System.out.println("=================================");
 //					System.out.println();
 
-				}
+					}
 
 				} else {
-					
+
 					System.out.println("등록된 학생이 없습니다");
 					break;
 				}
-				
-			} else if(select == 3) {
-				
+
+			} else if (select == 3) {
+
 				if (teacher.students == null) {
 					System.out.println("등록된 학생이 없습니다.");
 				} else {
 					System.out.println("검색할 학생 번호를 입력하세요 >>");
 					int sNum = sc.nextInt();
-					int foundIndex = -1;
+
 					for (int i = 0; i < teacher.students.length; i++) {
 						if (sNum == teacher.students[i].num) {
 							sv.view(teacher.students[i]);
-							foundIndex = i;
 							break;
-						} 
+							
+						} else {
+							
+							System.out.println("해당 학생이 없습니다.");
+							break;
+							
+						}
 					}
-					
-					System.out.println("해당 학생이 없습니다.");
-//					if (foundIndex == -1) {
-//						System.out.println("해당 학생이 없습니다.");
-//					} 
-//					else {
-//						
-//						break;
-//						System.out.println("****찾은 학생****");
-//						System.out.println("=================================");
-//						System.out.println("번호 : " + teacher.students[foundIndex].num);
-//						System.out.println("이름 : " + teacher.students[foundIndex].name);
-//						System.out.println("국어 : " + teacher.students[foundIndex].kor + " 점");
-//						System.out.println("영어 : " + teacher.students[foundIndex].eng + " 점");
-//						System.out.println("수학 : " + teacher.students[foundIndex].math + " 점");
-//						System.out.println("총점 : " + teacher.students[foundIndex].total + " 점");
-//						System.out.printf("평균 : %.2f 점\n",teacher.students[foundIndex].avg);
-//						System.out.println("=================================");
-//						System.out.println();
-//					}
-				}
-				
-				
-				
-				
+
+				} 
+
 			} else {
 
 				System.out.println("프로그램 종료");
