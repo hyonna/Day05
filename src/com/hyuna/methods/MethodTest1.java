@@ -1,11 +1,13 @@
 package com.hyuna.methods;
 
+import java.util.Scanner;
+
 public class MethodTest1 {
 	
 	//멤버 메서드 합
-	public void hap() {
+	public void hap(int i , int j) {
 		
-		System.out.println(10 + 20);
+		
 		
 	}
 	
@@ -21,9 +23,14 @@ public class MethodTest1 {
 	//size - 60보다 크면 중형견 - 멍멍멍
 	//그 외 - 소형견 - 왈왈왈
 	
-	public void bark() {
+	public void bark(int size) {
 		
-		int size = 50;
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("강아지의 사이즈를 입력하세요");
+//		int size = sc.nextInt();
+		
+		
 		
 		if(size >= 90) {
 			

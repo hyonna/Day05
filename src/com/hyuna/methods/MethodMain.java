@@ -16,8 +16,10 @@ public class MethodMain {
 		
 		if(select == 1) {
 			
+			System.out.println("1번 숫자 입력");
 			
-			m1.hap();
+			
+			System.out.println();
 			
 		} else {
 			
@@ -25,16 +27,12 @@ public class MethodMain {
 			m1.minus();
 		}
 		
-		m1.bark();
+		System.out.println("사이즈를 입력하세요");
+		int size = sc.nextInt();
 		
-//		MethodTest1 m1 = new MethodTest1();
-//		
-//		m1.hap(); //멤버 메서드 호출
-//		
-//		//메서드 명  minus
-//		// 10 - 20의 결과물 출력
-//		
-//		m1.minus();
+		m1.bark(55); //인자값
+		
+
 
 	}
 

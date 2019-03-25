@@ -8,6 +8,7 @@ public class SchoolMain5 {
 
 		Scanner sc = new Scanner(System.in);
 		Teacher teacher = new Teacher();
+		StudentView sv = new StudentView();
 
 		System.out.println("선생님의 이름을 입력하세요.");
 		teacher.name = sc.next();
@@ -96,16 +97,19 @@ public class SchoolMain5 {
 					
 				for (int i = 0; i < teacher.students.length; i++) {
 
-					System.out.println("=================================");
-					System.out.println("학생 번호 : " + teacher.students[i].num);
-					System.out.println("학생 이름 : " + teacher.students[i].name);
-					System.out.println(teacher.students[i].name + " 학생의 국어 점수 : " + teacher.students[i].kor + "점");
-					System.out.println(teacher.students[i].name + " 학생의 수학 이름 : " + teacher.students[i].math + "점");
-					System.out.println(teacher.students[i].name + " 학생의 영어 이름 : " + teacher.students[i].eng + "점");
-					System.out.println(teacher.students[i].name + " 학생의 총점 : " + teacher.students[i].total + "점");
-					System.out.printf("%s 학생의 평균 : %.2f 점\n", teacher.students[i].name, teacher.students[i].avg);
-					System.out.println("=================================");
-					System.out.println();
+					sv.listView(teacher.students[i]);
+					
+					
+//					System.out.println("=================================");
+//					System.out.println("학생 번호 : " + teacher.students[i].num);
+//					System.out.println("학생 이름 : " + teacher.students[i].name);
+//					System.out.println(teacher.students[i].name + " 학생의 국어 점수 : " + teacher.students[i].kor + "점");
+//					System.out.println(teacher.students[i].name + " 학생의 수학 이름 : " + teacher.students[i].math + "점");
+//					System.out.println(teacher.students[i].name + " 학생의 영어 이름 : " + teacher.students[i].eng + "점");
+//					System.out.println(teacher.students[i].name + " 학생의 총점 : " + teacher.students[i].total + "점");
+//					System.out.printf("%s 학생의 평균 : %.2f 점\n", teacher.students[i].name, teacher.students[i].avg);
+//					System.out.println("=================================");
+//					System.out.println();
 
 				}
 
@@ -125,25 +129,31 @@ public class SchoolMain5 {
 					int foundIndex = -1;
 					for (int i = 0; i < teacher.students.length; i++) {
 						if (sNum == teacher.students[i].num) {
+							sv.view(teacher.students[i]);
 							foundIndex = i;
 							break;
-						}
+						} 
 					}
-					if (foundIndex == -1) {
-						System.out.println("해당 학생이 없습니다.");
-					} else {
-						System.out.println("****찾은 학생****");
-						System.out.println("=================================");
-						System.out.println("번호 : " + teacher.students[foundIndex].num);
-						System.out.println("이름 : " + teacher.students[foundIndex].name);
-						System.out.println("국어 : " + teacher.students[foundIndex].kor + " 점");
-						System.out.println("영어 : " + teacher.students[foundIndex].eng + " 점");
-						System.out.println("수학 : " + teacher.students[foundIndex].math + " 점");
-						System.out.println("총점 : " + teacher.students[foundIndex].total + " 점");
-						System.out.printf("평균 : %.2f 점\n",teacher.students[foundIndex].avg);
-						System.out.println("=================================");
-						System.out.println();
-					}
+					
+					System.out.println("해당 학생이 없습니다.");
+//					if (foundIndex == -1) {
+//						System.out.println("해당 학생이 없습니다.");
+//					} 
+//					else {
+//						
+//						break;
+//						System.out.println("****찾은 학생****");
+//						System.out.println("=================================");
+//						System.out.println("번호 : " + teacher.students[foundIndex].num);
+//						System.out.println("이름 : " + teacher.students[foundIndex].name);
+//						System.out.println("국어 : " + teacher.students[foundIndex].kor + " 점");
+//						System.out.println("영어 : " + teacher.students[foundIndex].eng + " 점");
+//						System.out.println("수학 : " + teacher.students[foundIndex].math + " 점");
+//						System.out.println("총점 : " + teacher.students[foundIndex].total + " 점");
+//						System.out.printf("평균 : %.2f 점\n",teacher.students[foundIndex].avg);
+//						System.out.println("=================================");
+//						System.out.println();
+//					}
 				}
 				
 				
