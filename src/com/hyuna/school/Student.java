@@ -9,8 +9,8 @@ public class Student {
 	int kor;
 	int eng;
 	int math;
-	int total = kor + eng + math;
-	double avg = total / 3.0;
+	int total;
+	double avg;
 	
 	
 	//멤버메서드 선언
