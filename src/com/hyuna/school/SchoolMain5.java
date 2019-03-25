@@ -26,7 +26,8 @@ public class SchoolMain5 {
 
 			System.out.println("1.학생정보입력");
 			System.out.println("2.전체정보조회");
-			System.out.println("3.프로그램종료");
+			System.out.println("3.학생정보검색");
+			System.out.println("4.프로그램종료");
 			int select = sc.nextInt();
 
 			if (select == 1) {
@@ -87,8 +88,12 @@ public class SchoolMain5 {
 
 			} else if (select == 2) {
 
-				System.out.println("========= 전체정보조회 =========");
 				
+				
+				if(teacher.students != null) {
+					
+					System.out.println("========= 전체정보조회 =========");
+					
 				for (int i = 0; i < teacher.students.length; i++) {
 
 					System.out.println("=================================");
@@ -104,6 +109,46 @@ public class SchoolMain5 {
 
 				}
 
+				} else {
+					
+					System.out.println("등록된 학생이 없습니다");
+					break;
+				}
+				
+			} else if(select == 3) {
+				
+				if (teacher.students == null) {
+					System.out.println("등록된 학생이 없습니다.");
+				} else {
+					System.out.println("검색할 학생 번호를 입력하세요 >>");
+					int sNum = sc.nextInt();
+					int foundIndex = -1;
+					for (int i = 0; i < teacher.students.length; i++) {
+						if (sNum == teacher.students[i].num) {
+							foundIndex = i;
+							break;
+						}
+					}
+					if (foundIndex == -1) {
+						System.out.println("해당 학생이 없습니다.");
+					} else {
+						System.out.println("****찾은 학생****");
+						System.out.println("=================================");
+						System.out.println("번호 : " + teacher.students[foundIndex].num);
+						System.out.println("이름 : " + teacher.students[foundIndex].name);
+						System.out.println("국어 : " + teacher.students[foundIndex].kor + " 점");
+						System.out.println("영어 : " + teacher.students[foundIndex].eng + " 점");
+						System.out.println("수학 : " + teacher.students[foundIndex].math + " 점");
+						System.out.println("총점 : " + teacher.students[foundIndex].total + " 점");
+						System.out.printf("평균 : %.2f 점\n",teacher.students[foundIndex].avg);
+						System.out.println("=================================");
+						System.out.println();
+					}
+				}
+				
+				
+				
+				
 			} else {
 
 				System.out.println("프로그램 종료");
